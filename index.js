@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = [
     {
         type: "input",
@@ -27,14 +27,11 @@ const questions = [
         choices: [
             "Apache 2.0",
             "CC0 1.0",
-            "CC Attribution 4.0",
-            "CC Attribution-NonCommercial 4.0",
-            "Eclipse Public License 1.0",
+            "CC BY 4.0",
+            "CC BY-NC 4.0",
             "GNU GPL v3",
             "ISC License",
-            "MIT License",
-            "ODC Attribution License",
-            "Open Database License"
+            "MIT License"
         ]
     },
     {
@@ -64,7 +61,7 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// write README file
 function writeToFile(fileName, data) {
     fs.writeFile('./dist/README.md', data, err => {
         if (err) {
@@ -76,7 +73,7 @@ function writeToFile(fileName, data) {
     })
 };
 
-// TODO: Create a function to initialize app
+// initialize and run app
 function init() {
 	console.log(
 		"Welcome to the README Generator. In the following prompts, type '\\n' anywhere you want a linebreak in the final product."
@@ -87,5 +84,4 @@ function init() {
     .then(markdown => writeToFile("README", markdown));
 }
 
-// Function call to initialize app
 init();
