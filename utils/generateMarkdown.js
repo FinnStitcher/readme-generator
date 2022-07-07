@@ -54,7 +54,7 @@ function renderLicenseBadge(license) {
 function addTestingSection(text) {
     if (text) {
 		return `## Testing
-        ${text}`;        
+${text}`;        
     }
 	else {
         return '';
@@ -65,7 +65,7 @@ function addContact(github, email) {
     if (github) {
         return `For questions or further information, reach out to ${email}.
         
-        This project is owned and managed by [https://github.com/${github}|${github}].`
+This project is owned and managed by [https://github.com/${github}|${github}].`
     } else {
         return `For questions or further information, reach out to ${email}.`
     }
@@ -73,16 +73,18 @@ function addContact(github, email) {
 
 function addTableOfContents(data) {
     let tableOfContents = `- [Installation](#installation)
-    - [How to Use](#how-to-use)
-    - [How to Contribute](#how-to-contribute)
-    `
+- [How to Use](#how-to-use)
+- [How to Contribute](#how-to-contribute)
+`
 
     if (data.test) {
         tableOfContents += `- [Testing](#testing)
-        `
+`
     };
 
     tableOfContents += `- [Questions](#questions)`
+
+    return tableOfContents;
 }
 
 // generate markdown for README
