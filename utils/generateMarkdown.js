@@ -63,17 +63,36 @@ function addTestingSection(text) {
 
 function addContact(github, email) {
     if (github) {
-        return `For questions or further information, reach out to ${email}. This project is owned and managed by [https://github.com/${github}|${github}].`
+        return `For questions or further information, reach out to ${email}.
+        
+        This project is owned and managed by [https://github.com/${github}|${github}].`
     } else {
         return `For questions or further information, reach out to ${email}.`
     }
 };
+
+function addTableOfContents(data) {
+    let tableOfContents = `- [Installation](#installation)
+    - [How to Use](#how-to-use)
+    - [How to Contribute](#how-to-contribute)
+    `
+
+    if (data.test) {
+        tableOfContents += `- [Testing](#testing)
+        `
+    };
+
+    tableOfContents += `- [Questions](#questions)`
+}
 
 // generate markdown for README
 function generateMarkdown(data) {
 	return `# ${data.title}
 ${data.description}
 ${renderLicenseBadge(data.license)}
+
+## Table of Contents
+${addTableOfContents(data)}
 
 ## Installation
 ${data.install}
