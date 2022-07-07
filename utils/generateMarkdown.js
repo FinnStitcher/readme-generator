@@ -62,12 +62,12 @@ function addTestingSection(text) {
 }
 
 function addContact(github, email) {
-    if (email) {
-        return `For questions or further information, contact ${github} at ${email}.`
+    if (github) {
+        return `For questions or further information, reach out to ${email}. This project is owned and managed by [https://github.com/${github}|${github}].`
     } else {
-        return `For questions or further information, reach out to ${data.email}.`
+        return `For questions or further information, reach out to ${email}.`
     }
-}
+};
 
 // generate markdown for README
 function generateMarkdown(data) {
