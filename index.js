@@ -83,6 +83,14 @@ const questions = [
 
 // write README file
 function writeToFile(fileName, data) {
+    fs.mkdir("./dist", (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+
+        console.log("Directory created.");
+    })
 	fs.writeFile("./dist/README.md", data, (err) => {
 		if (err) {
 			console.error(err);
