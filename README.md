@@ -11,4 +11,4 @@ Want to streamline the process of README creation? This tool is for you. This ap
 
 ## See It In Action
 
-https://www.awesomescreenshot.com/video/9860872?key=c689a2f861d58ecf00e998f9e7cf74e8
+https://www.awesomescreenshot.com/video/9860952?key=914aafe4abec60bc6015b07af217d59f
