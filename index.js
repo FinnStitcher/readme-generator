@@ -82,23 +82,28 @@ const questions = [
 ];
 
 // write README file
-function writeToFile(fileName, data) {
-    fs.mkdir("./dist", (err) => {
+function writeToFile(data) {
+    fs.access("./dist", fs.constants.F_OK, (err) => {
         if (err) {
-            console.error(err);
-            return;
-        }
+            fs.mkdir("./dist", (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
 
-        console.log("Directory created.");
-    })
-	fs.writeFile("./dist/README.md", data, (err) => {
-		if (err) {
-			console.error(err);
-			return;
-		}
+                console.log("Directory created.");
+            })               
+        };
 
-		console.log("File created. Look in the dist folder to see it.");
-	});
+        fs.writeFile("./dist/README.md", data, (err) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            console.log("File created. Look in the dist folder to see it.");
+        });        
+    });
 }
 
 // initialize and run app
